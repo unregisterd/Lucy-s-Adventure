@@ -1,0 +1,24 @@
+﻿<Solution>
+  <Project Path="com.alexeyperov.unity-open-mcp-verify.Editor.csproj" />
+  <Project Path="com.alexeyperov.unity-open-mcp-bridge.Editor.csproj" />
+  <Project Path="com.alexeyperov.unity-open-mcp-bridge.ParticleSystem.Editor.csproj" />
+  <Project Path="com.alexeyperov.unity-open-mcp-bridge.Constraints.Editor.csproj" />
+  <Project Path="com.alexeyperov.unity-open-mcp-bridge.ShaderGraph.Editor.csproj" />
+  <Project Path="com.alexeyperov.unity-open-mcp-bridge.InputSimulation.Ugui.Editor.csproj" />
+  <Project Path="com.alexeyperov.unity-open-mcp-bridge.Lighting.Editor.csproj" />
+  <Project Path="com.alexeyperov.unity-open-mcp-bridge.Audio.Editor.csproj" />
+  <Project Path="com.alexeyperov.unity-open-mcp-bridge.SpriteAtlas.Editor.csproj" />
+  <Project Path="com.alexeyperov.unity-open-mcp-bridge.InputSystem.Editor.csproj" />
+  <Project Path="com.alexeyperov.unity-open-mcp-bridge.Navigation.Editor.csproj" />
+  <Project Path="Assembly-CSharp.csproj" />
+  <Project Path="com.alexeyperov.unity-open-mcp-bridge.TestRunner.Editor.csproj" />
+  <Project Path="com.alexeyperov.unity-open-mcp-bridge.Animation.Editor.csproj" />
+  <Project Path="com.alexeyperov.unity-open-mcp-bridge.Timeline.Editor.csproj" />
+  <Project Path="com.alexeyperov.unity-open-mcp-bridge.UI.Editor.csproj" />
+  <Project Path="com.alexeyperov.unity-open-mcp-bridge.InputSimulation.Tmp.Editor.csproj" />
+  <Project Path="com.alexeyperov.unity-open-mcp-bridge.Dependencies.Editor.csproj" />
+  <Project Path="com.alexeyperov.unity-open-mcp-bridge.Cinemachine.Editor.csproj" />
+  <Project Path="com.alexeyperov.unity-open-mcp-bridge.Terrain.Editor.csproj" />
+  <Project Path="com.alexeyperov.unity-open-mcp-bridge.Texture.Editor.csproj" />
+  <Project Path="Assembly-CSharp-Editor.csproj" />
+</Solution>

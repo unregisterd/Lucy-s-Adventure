@@ -1,0 +1,17 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "mcp": {
+    "unity-open-mcp": {
+      "type": "local",
+      "command": [
+        "npx",
+        "-y",
+        "unity-open-mcp@1.6.0"
+      ],
+      "enabled": true,
+      "environment": {
+        "UNITY_PROJECT_PATH": "E:\\UNITY\\AdventureSample"
+      }
+    }
+  }
+}
