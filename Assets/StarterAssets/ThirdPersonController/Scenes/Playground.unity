@@ -325,6 +325,15 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 22100000, guid: 70aa8dfd71684a3438609d1b4819f0e4,
         type: 2}
+    - target: {fileID: 6982812146204527121, guid: 64dce48905ffd9b4293e595fa6941544,
+        type: 3}
+      propertyPath: m_WarningMessage
+      value: "\nBinding warning: Some generic clip(s) animate transforms that are
+        already bound by a Humanoid avatar. These transforms can only be changed
+        by Humanoid clips.\n\tTransform 'mixamorig:Spine2'\n\tTransform 'mixamorig:Neck'\n\tTransform
+        'mixamorig:Spine2'\n\tTransform 'mixamorig:Neck'\n\tTransform 'mixamorig:Spine2'\n\tTransform
+        'mixamorig:Neck'"
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 3837663348675104489, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
@@ -1222,6 +1231,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: c5fb729c423847c46bc756f61a4f0653,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: d24fe48713b37a14294b71ecec51c84b, type: 2}
+    - target: {fileID: 7078722787440015773, guid: c5fb729c423847c46bc756f61a4f0653,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.4470267
+      objectReference: {fileID: 0}
+    - target: {fileID: 7078722787440015773, guid: c5fb729c423847c46bc756f61a4f0653,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.54117507
+      objectReference: {fileID: 0}
+    - target: {fileID: 7078722787440015773, guid: c5fb729c423847c46bc756f61a4f0653,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.45191652
+      objectReference: {fileID: 0}
+    - target: {fileID: 7078722787440015773, guid: c5fb729c423847c46bc756f61a4f0653,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.55051637
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
