@@ -13,9 +13,21 @@ namespace AdventureSample.Player
         public ICharacterState PreviousState { get; private set; }
         public CharacterStateContext Context { get; }
 
+        // 五个状态各建一份，之后反复复用
+        public ICharacterState Normal { get; }
+        public ICharacterState Armed { get; }
+        public ICharacterState Aim { get; }
+        public ICharacterState SadIdle { get; }
+        public ICharacterState PutGunBack { get; }
+
         public CharacterStateMachine(CharacterStateContext context)
         {
             Context = context;
+            Normal = new NormalState(this);
+            Armed = new ArmedState(this);
+            Aim = new AimState(this);
+            SadIdle = new SadIdleState(this);
+            PutGunBack = new PutGunBackState(this);
         }
 
         // 当事件发生时，StateChanged事件将被触发，并传递前一个状态和当前状态作为参数

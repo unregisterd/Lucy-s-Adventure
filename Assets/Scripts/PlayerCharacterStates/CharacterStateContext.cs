@@ -13,13 +13,15 @@ namespace AdventureSample.Player
     public class CharacterStateContext
     {
         public Animator Animator { get; private set; }
+        public Transform Transform { get; private set; }
         public ThirdPersonController Controller { get; private set; }
         public StarterAssetsInputs Input { get; private set; }
         public LookAtModule LookAt { get;}
         
-        public CharacterStateContext(Animator Animator, ThirdPersonController Controller, StarterAssetsInputs Input, LookAtModule LookAt)
+        public CharacterStateContext(Animator Animator, Transform Transform, ThirdPersonController Controller, StarterAssetsInputs Input, LookAtModule LookAt)
         {
             this.Animator = Animator;
+            this.Transform = Transform;
             this.Controller = Controller;
             this.Input = Input;
             this.LookAt = LookAt;

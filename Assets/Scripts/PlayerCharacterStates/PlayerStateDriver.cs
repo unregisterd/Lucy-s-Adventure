@@ -16,6 +16,7 @@ namespace AdventureSample.Player
         {
             _ctx = new CharacterStateContext(
                 GetComponent<Animator>(),
+                GetComponent<Transform>(),
                 GetComponent<ThirdPersonController>(),
                 GetComponent<StarterAssetsInputs>(),
                 GetComponent<LookAtModule>()
@@ -23,7 +24,7 @@ namespace AdventureSample.Player
             _machine = new CharacterStateMachine(_ctx);
         }
 
-        private void Start() => _machine.ChangeState(new NormalState(_machine));
+        private void Start() => _machine.ChangeState(_machine.Normal);
         private void Update() => _machine.Tick();
     
     }

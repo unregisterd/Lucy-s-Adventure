@@ -26,7 +26,7 @@ namespace AdventureSample.Player
 
             if (interrupted)
             {
-                _machine.ChangeState(new NormalState(_machine));
+                _machine.ChangeState(_machine.Normal);
             }
         }
 

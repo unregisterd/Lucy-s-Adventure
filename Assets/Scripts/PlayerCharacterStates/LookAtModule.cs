@@ -28,6 +28,11 @@ namespace AdventureSample.Player
         {
             if (headAimConstraint == null) return;
 
+            if (!_isLooking) {
+                headAimConstraint.weight = 0f; // 没有目标时，直接归零权重
+                return;
+            }
+
             // 1. 定时检测，寻找最佳目标
             _timer += Time.deltaTime;
             if (_timer >= checkInterval)
