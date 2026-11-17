@@ -13,7 +13,11 @@ namespace AdventureSample.Player
         {
             _machine.Context.Animator.SetBool("IsArmed", true);
             _machine.Context.Animator.SetBool("IsAiming", false);
-            if (_machine.Context.LookAt != null) _machine.Context.LookAt.SetLooking(true); // 持枪时启用3米视线
+            _machine.Context.SpineAdjuster.SetDown(true); // 持枪时调整脊椎
+            _machine.Context.WeaponController.ShowWeapon();
+
+            if (_machine.Context.LookAt != null) _machine.Context.LookAt.SetLooking(false); // 持枪时禁用3米视线
+
         }
 
         public void OnUpdate()
@@ -32,6 +36,9 @@ namespace AdventureSample.Player
             }
         }
 
-        public void OnExit() { }
+        public void OnExit() 
+        {
+            //_machine.Context.SpineAdjuster.SetDown(false); // 退出持枪，恢复脊椎
+        }
     }
 }

@@ -1,5 +1,5 @@
 using UnityEngine;
-using UnityEngine.InputSystem; // 必须加上这个才能检测鼠标
+using UnityEngine.InputSystem;
 
 namespace AdventureSample.Player
 {
@@ -19,8 +19,12 @@ namespace AdventureSample.Player
         public void OnEnter()
         {
             // 确保关闭所有动画层
-            _machine.Context.Animator.SetBool("IsArmed", false);
-            _machine.Context.Animator.SetBool("IsAiming", false);
+            _ctx.Animator.SetBool("IsArmed", false);
+            _ctx.Animator.SetBool("IsAiming", false);
+            // 确保关闭武器显示
+            _ctx.WeaponController.HideWeapon();
+            // 确保关闭脊椎压低
+            _ctx.SpineAdjuster.SetDown(false);
             
             _idleTimer = 0f;
             _ctx.LookAt.SetLooking(true);

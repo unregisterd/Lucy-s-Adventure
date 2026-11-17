@@ -12,6 +12,10 @@ namespace AdventureSample.Player
         public void OnEnter()
         {
             _machine.Context.Animator.SetBool("IsAiming", true);
+            _machine.Context.CrosshairUI.SetActive(true); // 开瞄准，显示准星
+            _machine.Context.CameraModule.SetAimView(true); // 开瞄准，切换越肩视角
+            _machine.Context.SpineAdjuster.SetDown(true); // 瞄准时调整脊椎
+
             if (_machine.Context.LookAt != null) _machine.Context.LookAt.SetLooking(false); // 瞄准时禁用3米视线，交给摄像机
         }
 
@@ -22,6 +26,14 @@ namespace AdventureSample.Player
             {
                 _machine.ChangeState(_machine.Armed);
                 return;
+            }
+
+            // 单发：按下的这一帧开一枪，然后把标记吃掉，按住不会连发
+            if (_machine.Context.Input.shoot)
+            {
+                _machine.Context.Input.ShootInput(false);
+                _machine.Context.WeaponController.Shoot();
+                _machine.Context.Animator.SetTrigger("Shoot");
             }
 
             // 瞄准时的身体旋转
@@ -36,6 +48,8 @@ namespace AdventureSample.Player
         public void OnExit()
         {
             _machine.Context.Animator.SetBool("IsAiming", false);
+            _machine.Context.CrosshairUI.SetActive(false); // 退出瞄准，隐藏准星
+            _machine.Context.CameraModule.SetAimView(false); // 退出瞄准，切换回正常视角
         }
     }
 }

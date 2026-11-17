@@ -15,6 +15,7 @@ namespace AdventureSample.Player
         public void OnEnter()
         {
             _machine.Context.Animator.SetTrigger("PutGunBack");
+            _machine.Context.SpineAdjuster.SetDown(true);
         }
 
         public void OnUpdate()
@@ -34,8 +35,8 @@ namespace AdventureSample.Player
 
         public void OnExit()
         {
-            // 回到 Normal 时才把持枪标记关掉，别在 OnEnter 就关（见下面第四节）
-            
+            _machine.Context.WeaponController.HideWeapon();
+            _machine.Context.SpineAdjuster.SetDown(false);
         }
     }
 }

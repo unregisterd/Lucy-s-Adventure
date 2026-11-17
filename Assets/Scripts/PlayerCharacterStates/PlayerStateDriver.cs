@@ -9,6 +9,7 @@ namespace AdventureSample.Player
 {
     public class PlayerStateDriver : MonoBehaviour
     {
+        [SerializeField] private GameObject _crosshairUI; // 准星UI
         private CharacterStateContext _ctx;
         private CharacterStateMachine _machine;
 
@@ -19,7 +20,11 @@ namespace AdventureSample.Player
                 GetComponent<Transform>(),
                 GetComponent<ThirdPersonController>(),
                 GetComponent<StarterAssetsInputs>(),
-                GetComponent<LookAtModule>()
+                GetComponent<LookAtModule>(),
+                GetComponent<WeaponController>(),
+                _crosshairUI,
+                GetComponent<CameraModule>(),
+                GetComponent<SpineAdjuster>()
             );
             _machine = new CharacterStateMachine(_ctx);
         }
