@@ -20,5 +20,8 @@ public static class GameEvents
     public const string QuestStarted = "QuestStarted";
     public const string QuestStateChanged = "QuestStateChanged";
     public const string QuestCompleted = "QuestCompleted";
+    public const string FireWeapon = "FireWeapon"; // 开火事件
+    public const string ReloadBullets = "ReloadBullets"; // 装弹事件
+    public const string InArmedState = "InArmedState"; //处于持枪状态
 
 }

@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Item_stick
   m_EditorClassIdentifier: 
   itemId: stick
-  displayName: stick
+  displayName: "\u6728\u68CD"
+  itemNumber: 1
   icon: {fileID: 21300000, guid: b74c31d447d2f5d41a61081bdf5e7126, type: 3}

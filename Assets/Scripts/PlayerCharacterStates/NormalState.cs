@@ -27,7 +27,7 @@ namespace AdventureSample.Player
             _ctx.SpineAdjuster.SetDown(false);
             
             _idleTimer = 0f;
-            _ctx.LookAt.SetLooking(true);
+            _ctx.LookAt.SetLooking(false);
         }
 
         public void OnUpdate()
@@ -43,6 +43,7 @@ namespace AdventureSample.Player
             
             if (!isMoving && isGrounded)
             {
+                _ctx.LookAt.SetLooking(true);
                 _idleTimer += Time.deltaTime;
                 if (_idleTimer >= IdleThreshold)
                 {
@@ -52,6 +53,7 @@ namespace AdventureSample.Player
             }
             else
             {
+                _ctx.LookAt.SetLooking(false);
                 _idleTimer = 0f;
             }
         }

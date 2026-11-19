@@ -3,6 +3,7 @@
   <Project Path="com.alexeyperov.unity-open-mcp-bridge.Editor.csproj" />
   <Project Path="com.alexeyperov.unity-open-mcp-bridge.ParticleSystem.Editor.csproj" />
   <Project Path="Assembly-CSharp.csproj" />
+  <Project Path="Assembly-CSharp-Editor.csproj" />
   <Project Path="com.alexeyperov.unity-open-mcp-bridge.Constraints.Editor.csproj" />
   <Project Path="com.alexeyperov.unity-open-mcp-bridge.ShaderGraph.Editor.csproj" />
   <Project Path="com.alexeyperov.unity-open-mcp-bridge.InputSimulation.Ugui.Editor.csproj" />
@@ -20,5 +21,4 @@
   <Project Path="com.alexeyperov.unity-open-mcp-bridge.Cinemachine.Editor.csproj" />
   <Project Path="com.alexeyperov.unity-open-mcp-bridge.Terrain.Editor.csproj" />
   <Project Path="com.alexeyperov.unity-open-mcp-bridge.Texture.Editor.csproj" />
-  <Project Path="Assembly-CSharp-Editor.csproj" />
 </Solution>

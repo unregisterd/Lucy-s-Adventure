@@ -15,7 +15,7 @@ namespace AdventureSample.Player
         public void OnEnter()
         {
             _machine.Context.Animator.SetTrigger("PutGunBack");
-            _machine.Context.SpineAdjuster.SetDown(true);
+            
         }
 
         public void OnUpdate()

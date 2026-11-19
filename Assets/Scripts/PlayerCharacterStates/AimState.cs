@@ -11,6 +11,8 @@ namespace AdventureSample.Player
 
         public void OnEnter()
         {
+            // 清掉可能残留的按下标记：进入瞄准是一段新开始，不该继承上一发
+            _machine.Context.Input.ShootInput(false);
             _machine.Context.Animator.SetBool("IsAiming", true);
             _machine.Context.CrosshairUI.SetActive(true); // 开瞄准，显示准星
             _machine.Context.CameraModule.SetAimView(true); // 开瞄准，切换越肩视角
@@ -33,7 +35,8 @@ namespace AdventureSample.Player
             {
                 _machine.Context.Input.ShootInput(false);
                 _machine.Context.WeaponController.Shoot();
-                _machine.Context.Animator.SetTrigger("Shoot");
+                if(_machine.Context.WeaponController.CurrentBullets > 0)
+                    _machine.Context.Animator.SetTrigger("Shoot");
             }
 
             // 瞄准时的身体旋转
@@ -50,6 +53,7 @@ namespace AdventureSample.Player
             _machine.Context.Animator.SetBool("IsAiming", false);
             _machine.Context.CrosshairUI.SetActive(false); // 退出瞄准，隐藏准星
             _machine.Context.CameraModule.SetAimView(false); // 退出瞄准，切换回正常视角
+            _machine.Context.SpineAdjuster.SetDown(false); // 退出瞄准，恢复脊椎
         }
     }
 }
