@@ -36,7 +36,7 @@ namespace AdventureSample.Player
         public void OnExit()
         {
             _machine.Context.WeaponController.HideWeapon();
-            _machine.Context.SpineAdjuster.SetDown(false);
+            _machine.Context.SpineAdjuster.SetDown(false, 0);
         }
     }
 }

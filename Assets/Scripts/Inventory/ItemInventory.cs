@@ -51,7 +51,7 @@ public class ItemInventory : MonoBehaviour
 
     public bool Has(string itemId)
     {
-        return items.ContainsKey(itemId) && items[itemId] > 0;
+        return !string.IsNullOrEmpty(itemId) && items.ContainsKey(itemId);
     }
 
     public int GetCount(string itemId)

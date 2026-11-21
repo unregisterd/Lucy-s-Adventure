@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UIElements;
 
 namespace AdventureSample.Player
 {
@@ -23,8 +24,8 @@ namespace AdventureSample.Player
             _ctx.Animator.SetBool("IsAiming", false);
             // 确保关闭武器显示
             _ctx.WeaponController.HideWeapon();
-            // 确保关闭脊椎压低
-            _ctx.SpineAdjuster.SetDown(false);
+            // 确保关闭脊椎不压低
+            _ctx.SpineAdjuster.SetDown(false, 0);
             
             _idleTimer = 0f;
             _ctx.LookAt.SetLooking(false);
@@ -32,11 +33,19 @@ namespace AdventureSample.Player
 
         public void OnUpdate()
         {
-            // 按 M 键拔枪
-            if (Keyboard.current != null && Keyboard.current.mKey.wasPressedThisFrame)
+            // 按 M 键拔手枪
+            if (Keyboard.current != null && Keyboard.current.mKey.wasPressedThisFrame && ItemInventory.Instance.Has(WeaponNames.Pistol))
             {
-                _machine.ChangeState(_machine.Armed);
+                EventManager<string>.TriggerEvent(GameEvents.WeaponlArmed, WeaponNames.Pistol);
+                ChangeAnimation();
             }
+
+            if (Keyboard.current != null && Keyboard.current.nKey.wasPressedThisFrame && ItemInventory.Instance.Has(WeaponNames.Refle))
+            {
+                EventManager<string>.TriggerEvent(GameEvents.WeaponlArmed, WeaponNames.Refle);
+                ChangeAnimation();
+            }
+            
             
             bool isMoving = _ctx.Input.move.sqrMagnitude > 0.01f;
             bool isGrounded = _ctx.Controller.Grounded;
@@ -56,6 +65,12 @@ namespace AdventureSample.Player
                 _ctx.LookAt.SetLooking(false);
                 _idleTimer = 0f;
             }
+        }
+
+        private void ChangeAnimation()
+        {
+            _ctx.Animator.runtimeAnimatorController = _ctx.WeaponController.OverrideController;
+            _machine.ChangeState(_machine.Armed); 
         }
 
         public void OnExit()

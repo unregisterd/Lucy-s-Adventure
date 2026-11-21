@@ -62,11 +62,11 @@ namespace AdventureSample.Player
             }
         }
 
-        public void SetDown(bool down) 
+        public void SetDown(bool down, float downAngle) 
         { 
             _down = down; 
             // 1. 如果 down 为 true，目标角度就是 _downAngle，否则就是 0
-            _targetAngle = down ? _downAngle : 0f; 
+            _targetAngle = down ? downAngle : 0f; 
         }
 
         private void OnAnimatorIK(int layerIndex)   // layerIndex 0 = Base Layer

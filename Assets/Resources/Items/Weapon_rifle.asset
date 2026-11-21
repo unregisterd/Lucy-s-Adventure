@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52c3f4f00351f234598bcd6435742a98, type: 3}
+  m_Name: Weapon_rifle
+  m_EditorClassIdentifier: 
+  itemId: rifle
+  displayName: "\u6B65\u67AA"
+  itemNumber: 1
+  icon: {fileID: 21300000, guid: b74c31d447d2f5d41a61081bdf5e7126, type: 3}
+  weaponPrefab: {fileID: 1551098700871027099, guid: 144869a26a5c39d4aa4142e537579fe8,
+    type: 3}
+  muzzlePoint: {fileID: 6034155593767105011, guid: 1e9604562ac6bc244b5cb978fb839ed4,
+    type: 3}
+  bulletsId: rifleBullet
+  bulletsMag: 30
+  shootRange: 40
+  fireRate: 0.5
+  animatorOverride: {fileID: 22100000, guid: 3252e88975e296344a7963892fdbf48a, type: 2}
+  impulseTime: 0.3

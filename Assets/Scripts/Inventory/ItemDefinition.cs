@@ -10,4 +10,5 @@ public class ItemDefinition : ScriptableObject
     public string displayName;   // "木棍"
     public int itemNumber; // 物品数量
     public Sprite icon;          // 物品图标（先给字段，UI 可以暂不用）
+    // rifle setup: trigger domain reload v2
 }

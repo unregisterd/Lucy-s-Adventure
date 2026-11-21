@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52c3f4f00351f234598bcd6435742a98, type: 3}
+  m_Name: Weapon_pistol
+  m_EditorClassIdentifier: 
+  itemId: pistol
+  displayName: "\u624B\u67AA"
+  itemNumber: 1
+  icon: {fileID: 21300000, guid: b74c31d447d2f5d41a61081bdf5e7126, type: 3}
+  weaponPrefab: {fileID: 5036643752319761161, guid: d8c7f165d5f77bc4f8f263da01e15b49,
+    type: 3}
+  muzzlePoint: {fileID: 5248635158383851187, guid: 1511f8dc17a43fe41ac97fb4584fc6eb,
+    type: 3}
+  bulletsId: pistolBullet
+  bulletsMag: 10
+  shootRange: 10
+  fireRate: 1
+  animatorOverride: {fileID: 22100000, guid: c9a3523831cc748449c72e9ddd379163, type: 2}
+  impulseTime: 0.35

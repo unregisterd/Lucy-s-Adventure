@@ -7,10 +7,12 @@ using System.Collections.Generic;
 public class ItemDatabase : ScriptableObject
 {
     [SerializeField] private List<ItemDefinition> items = new();
+    [SerializeField] private List<WeaponDefinition> weaponsDefinition = new();
 
     // TODO A：运行时用的查找表
     //   字段别用 public Dictionary<...>，想想为什么
     private Dictionary<string, ItemDefinition> lookup;
+    private Dictionary<string, WeaponDefinition> weapons;
     
     private void OnEnable(){
         BuildLookup();
@@ -20,30 +22,60 @@ public class ItemDatabase : ScriptableObject
     private void BuildLookup()
     {
         lookup = new Dictionary<string, ItemDefinition>();
-        foreach (var item in items)
+        weapons = new Dictionary<string, WeaponDefinition>();
+
+        AddItem(lookup, items);
+        AddItem(weapons, weaponsDefinition);
+
+    }
+
+    private void AddItem<T>(
+        Dictionary<string, T> dictionary,
+        List<T> definitions)
+        where T : ItemDefinition
+    {
+        foreach (var item in definitions)
         {
-            // 1. item 为 null 就跳过
-            if(item == null) continue;
-            // 2. item.itemId 为空就跳过，打个警告（配置漏填）
-            if(string.IsNullOrEmpty(item.itemId)){
+            if (item == null) continue;
+
+            if (string.IsNullOrEmpty(item.itemId))
+            {
                 Debug.LogWarning($"[ItemDatabase] 物品 id 为空，已跳过：{item.name}");
                 continue;
             }
-            // 3. lookup 里已经有这个 id 就打警告（配置重复），然后继续覆盖
-            if(lookup.ContainsKey(item.itemId)){
+
+            if (dictionary.ContainsKey(item.itemId))
+            {
                 Debug.LogWarning($"[ItemDatabase] 物品 id 重复，已覆盖：{item.itemId}");
             }
-            lookup[item.itemId] = item;
+
+            dictionary[item.itemId] = item;
         }
-    }
+}
+
 
     // TODO C：public ItemDefinition Find(string itemId)
     //   查不到返回 null，别抛异常
+    // 查找普通物品的定义
     public ItemDefinition Find(string itemId){
-        if(lookup.TryGetValue(itemId, out var found)){
+        if (lookup.TryGetValue(itemId, out var found))
+        {
             return found;
         }
         else{
+            return null;
+        }
+    }
+
+    // 查找武器的定义
+    public WeaponDefinition FindWeapon(string weaponId)
+    {
+        if(weapons.TryGetValue(weaponId, out var found))
+        {
+            return found;
+        }
+        else
+        {
             return null;
         }
     }

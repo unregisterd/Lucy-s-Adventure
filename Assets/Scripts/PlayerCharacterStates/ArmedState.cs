@@ -19,9 +19,8 @@ namespace AdventureSample.Player
         {
             _ctx.Animator.SetBool("IsArmed", true);
             _ctx.Animator.SetBool("IsAiming", false);
-            // _machine.Context.SpineAdjuster.SetDown(true); // 持枪时调整脊椎
+            _machine.Context.SpineAdjuster.SetDown(true, 6); // 持枪时调整脊椎
             _ctx.WeaponController.ShowWeapon();
-            // _machine.Context.CameraModule.SetAimView(false); // 持枪时切换到第三人称视角
 
             if (_ctx != null) _machine.Context.LookAt.SetLooking(false); // 持枪时禁用3米视线
             EventManager<string>.TriggerEvent(GameEvents.InArmedState, _ctx.WeaponController.BulletsId);
@@ -43,6 +42,7 @@ namespace AdventureSample.Player
                 _machine.ChangeState(_machine.PutGunBack);
             }
 
+            // 进入装弹
             if (Keyboard.current != null && Keyboard.current.rKey.wasPressedThisFrame && _ctx.WeaponController.BulletsLeft > 0 && _ctx.WeaponController.CurrentBullets < _ctx.WeaponController.BulletsMag)
             {
                 _ctx.Animator.SetTrigger("Reload");
@@ -54,7 +54,7 @@ namespace AdventureSample.Player
 
         public void OnExit() 
         {
-            _ctx.SpineAdjuster.SetDown(false); // 退出持枪，恢复脊椎
+            _ctx.SpineAdjuster.SetDown(false, 0); // 退出持枪，恢复脊椎
         }
     }
 }

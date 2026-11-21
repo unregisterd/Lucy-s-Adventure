@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Lucy_PistolOverride
+  m_Controller: {fileID: 9100000, guid: 40db3173a05ae3242b1c182a09b0a183, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: -203655887218126122, guid: 2995275852583ab4886adf9a6b21268f,
+      type: 3}
+    m_OverrideClip: {fileID: -203655887218126122, guid: 2995275852583ab4886adf9a6b21268f,
+      type: 3}
+  - m_OriginalClip: {fileID: -203655887218126122, guid: 49fc61bff15e0984fa51982b770112f3,
+      type: 3}
+    m_OverrideClip: {fileID: -203655887218126122, guid: 49fc61bff15e0984fa51982b770112f3,
+      type: 3}
+  - m_OriginalClip: {fileID: -203655887218126122, guid: 9b8743ee1d9451640b862934f8412640,
+      type: 3}
+    m_OverrideClip: {fileID: -203655887218126122, guid: 9b8743ee1d9451640b862934f8412640,
+      type: 3}
+  - m_OriginalClip: {fileID: -203655887218126122, guid: 303a861e6499d8f4bbfdcdd7681d299a,
+      type: 3}
+    m_OverrideClip: {fileID: -203655887218126122, guid: 303a861e6499d8f4bbfdcdd7681d299a,
+      type: 3}
+  - m_OriginalClip: {fileID: -2702400367771620057, guid: 063aa479676c4084ebf187660ca0a7b8,
+      type: 3}
+    m_OverrideClip: {fileID: -2702400367771620057, guid: 063aa479676c4084ebf187660ca0a7b8,
+      type: 3}
+  - m_OriginalClip: {fileID: 4061839508520268033, guid: acff49ccb80be3446b041a1887e2cf6a,
+      type: 3}
+    m_OverrideClip: {fileID: 7478122292733868173, guid: 98f277b0c8055e143b2fcf058d3c27dc,
+      type: 3}
+  - m_OriginalClip: {fileID: 6564411413370888346, guid: 16114d403eabb53438de032c6f0d1deb,
+      type: 3}
+    m_OverrideClip: {fileID: 6564411413370888346, guid: 16114d403eabb53438de032c6f0d1deb,
+      type: 3}
+  - m_OriginalClip: {fileID: -203655887218126122, guid: ea8f1a5dccdc611499b4f609a94cce7d,
+      type: 3}
+    m_OverrideClip: {fileID: -203655887218126122, guid: ea8f1a5dccdc611499b4f609a94cce7d,
+      type: 3}

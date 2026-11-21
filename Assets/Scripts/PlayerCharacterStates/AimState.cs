@@ -16,7 +16,7 @@ namespace AdventureSample.Player
             _machine.Context.Animator.SetBool("IsAiming", true);
             _machine.Context.CrosshairUI.SetActive(true); // 开瞄准，显示准星
             _machine.Context.CameraModule.SetAimView(true); // 开瞄准，切换越肩视角
-            _machine.Context.SpineAdjuster.SetDown(true); // 瞄准时调整脊椎
+            _machine.Context.SpineAdjuster.SetDown(true, 15); // 瞄准时调整脊椎
 
             if (_machine.Context.LookAt != null) _machine.Context.LookAt.SetLooking(false); // 瞄准时禁用3米视线，交给摄像机
         }
@@ -53,7 +53,7 @@ namespace AdventureSample.Player
             _machine.Context.Animator.SetBool("IsAiming", false);
             _machine.Context.CrosshairUI.SetActive(false); // 退出瞄准，隐藏准星
             _machine.Context.CameraModule.SetAimView(false); // 退出瞄准，切换回正常视角
-            _machine.Context.SpineAdjuster.SetDown(false); // 退出瞄准，恢复脊椎
+            _machine.Context.SpineAdjuster.SetDown(false, 0); // 退出瞄准，恢复脊椎
         }
     }
 }
